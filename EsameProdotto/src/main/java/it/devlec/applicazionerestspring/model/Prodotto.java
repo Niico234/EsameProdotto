@@ -15,29 +15,38 @@ public class Prodotto {
     private String descrizione;
     private String marca;
     private Date dataDiAcquisto;
+    private Date dataDiPrenotazione;
     private Date dataDiProduzione;
     private Date dataDiScadenza;
     private double costo;
     private String valuta;
-    private boolean riciclabile;
+    private Boolean riciclabile;
     private String numeroModello;
-    private String numeroSerie;
     private String codiceBarre;
+    private String numeroSerie;
+    private String numeroVersione;
 
-    public Prodotto(Integer id, String nome, String descrizione, String marca, Date dataDiAcquisto, Date dataDiProduzione, Date dataDiScadenza, double costo, String valuta, boolean riciclabile, String numeroModello, String numeroSerie, String codiceBarre) {
+
+    public Prodotto( Integer id, String nome, String descrizione, String marca, Date dataDiAcquisto, Date dataDiPrenotazione, Date dataDiProduzione, Date dataDiScadenza, double costo, String valuta, Boolean riciclabile, String numeroModello, String codiceBarre, String numeroSerie, String numeroVersione) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
         this.marca = marca;
         this.dataDiAcquisto = dataDiAcquisto;
+        this.dataDiPrenotazione = dataDiPrenotazione;
         this.dataDiProduzione = dataDiProduzione;
         this.dataDiScadenza = dataDiScadenza;
         this.costo = costo;
         this.valuta = valuta;
         this.riciclabile = riciclabile;
         this.numeroModello = numeroModello;
-        this.numeroSerie = numeroSerie;
         this.codiceBarre = codiceBarre;
+        this.numeroSerie = numeroSerie;
+        this.numeroVersione = numeroVersione;
+    }
+
+    public Prodotto(){
+
     }
 
     public Integer getId() {
@@ -96,6 +105,13 @@ public class Prodotto {
         this.dataDiScadenza = dataDiScadenza;
     }
 
+    public Date getDataDiPrenotazione() {
+        return dataDiPrenotazione;
+    }
+
+    public void setDataDiPrenotazione(Date dataDiPrenotazione) {
+        this.dataDiPrenotazione = dataDiPrenotazione;
+    }
     public double getCosto() {
         return costo;
     }
@@ -112,11 +128,11 @@ public class Prodotto {
         this.valuta = valuta;
     }
 
-    public boolean isRiciclabile() {
+    public Boolean isRiciclabile() {
         return riciclabile;
     }
 
-    public void setRiciclabile(boolean riciclabile) {
+    public void setRiciclabile(Boolean riciclabile) {
         this.riciclabile = riciclabile;
     }
 
@@ -128,6 +144,14 @@ public class Prodotto {
         this.numeroModello = numeroModello;
     }
 
+    public String getCodiceBarre() {
+        return codiceBarre;
+    }
+
+    public void setCodiceBarre(String codiceBarre) {
+        this.codiceBarre = codiceBarre;
+    }
+
     public String getNumeroSerie() {
         return numeroSerie;
     }
@@ -136,11 +160,33 @@ public class Prodotto {
         this.numeroSerie = numeroSerie;
     }
 
-    public String getCodiceBarre() {
-        return codiceBarre;
+    public String getNumeroVersione() {
+        return numeroVersione;
     }
 
-    public void setCodiceBarre(String codiceBarre) {
-        this.codiceBarre = codiceBarre;
+    public void setNumeroVersione(String numeroVersione) {
+        this.numeroVersione = numeroVersione;
+    }
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", marca='" + marca + '\'' +
+                ", dataDiAcquisto=" + dataDiAcquisto +
+                ", dataDiPrenotazione=" + dataDiPrenotazione +
+                ", dataDiProduzione=" + dataDiProduzione +
+                ", dataDiScadenza=" + dataDiScadenza +
+                ", costo=" + costo +
+                ", valuta='" + valuta + '\'' +
+                ", riciclabile=" + riciclabile +
+                ", numeroModello='" + numeroModello + '\'' +
+                ", codiceBarre='" + codiceBarre + '\'' +
+                ", numeroSerie='" + numeroSerie + '\'' +
+                ", numeroVersione='" + numeroVersione + '\'' +
+                '}';
     }
 }
+
